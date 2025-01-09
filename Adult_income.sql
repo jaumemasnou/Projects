@@ -43,7 +43,7 @@ ADD COLUMN education_category TEXT;
 
 UPDATE adult_income_raw
 SET education_category = CASE
-							WHEN education IN ('Preschool','1st-4th','5th-6th', '7th-8th','9th', '10th','11th') THEN 'Low'
+			    WHEN education IN ('Preschool','1st-4th','5th-6th', '7th-8th','9th', '10th','11th') THEN 'Low'
                             WHEN education IN ('Some-college','Assoc-acdm', 'Assoc-voc','Prof-school', '12th','13th') THEN 'Intermediate'
                             WHEN education IN ('Bachelors','HS-grad','Masters', 'Doctorate') THEN 'High'
                             ELSE 'Unknown'
@@ -61,7 +61,7 @@ ADD COLUMN occupation_category TEXT;
 
 UPDATE adult_income_raw
 SET occupation_category = CASE
-							WHEN occupation IN ('Farming-fishing','Protective-serv','Priv-house-serv','Handlers-cleaners') THEN 'Low'
+			    WHEN occupation IN ('Farming-fishing','Protective-serv','Priv-house-serv','Handlers-cleaners') THEN 'Low'
                             WHEN occupation IN ('Adm-clerical','Other-service', 'Craft-repair','Sales', 'Transport-moving','Machine-op-inspct','Armed-Forces') THEN 'Intermediate'
                             WHEN occupation IN ('Exec-managerial','Prof-specialty','Tech-support') THEN 'High'
                             ELSE 'Unknown'
@@ -77,12 +77,12 @@ ADD COLUMN age_group TEXT;
 
 UPDATE adult_income_raw
 SET age_group = CASE
-					WHEN age BETWEEN 17 AND 29 THEN 'Young'
-					WHEN age BETWEEN 30 AND 45 THEN 'Adult'
-					WHEN age BETWEEN 46 AND 65 THEN 'Seniors'
-                    WHEN age > 65 THEN 'Old'
-                    ELSE 'Unknown'
-				END;
+		   WHEN age BETWEEN 17 AND 29 THEN 'Young'
+		   WHEN age BETWEEN 30 AND 45 THEN 'Adult'
+		   WHEN age BETWEEN 46 AND 65 THEN 'Seniors'
+                   WHEN age > 65 THEN 'Old'
+                 ELSE 'Unknown'
+		 END;
 
 
 -- EXPLORATORY DATA ANALYSIS --
